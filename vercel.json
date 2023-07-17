@@ -14,10 +14,7 @@
     {
       "src": "/login",
       "method": ["POST"]
-    },
-    {
-      "src": "/logout",
-      "method": ["POST"]
     }
+  
   ]
 }
