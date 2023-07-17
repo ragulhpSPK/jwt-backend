@@ -25,10 +25,13 @@ app.use("/api/name", nameRoute);
 console.log(process.env.MONGO_URL);
 
 mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://ragulhp27:ragulhp2704@cluster0.hjbngoz.mongodb.net/jwt?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     app.listen(8080, () => {
       console.log("server listening on port 8080");
