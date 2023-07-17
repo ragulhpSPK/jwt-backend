@@ -18,6 +18,7 @@ app.use(
     origin: process.env.ORIGIN,
     credentials: true,
     methods: ["GET", "POST"],
+    allowedHeaders: ["Authorization"],
   })
 );
 
