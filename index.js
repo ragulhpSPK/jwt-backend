@@ -7,9 +7,9 @@ var cookieParser = require("cookie-parser");
 const cors = require("cors");
 require("dotenv").config();
 
-// app.post("/api/create", (req, res) => {
-//   res.send("hello");
-// });
+app.get("/", (req, res) => {
+  res.send("hello");
+});
 
 app.use(cookieParser());
 app.use(express.json());
