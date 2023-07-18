@@ -9,11 +9,7 @@ require("dotenv").config();
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(
-  cors({
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.use("/api/user", userRoute);
 app.use("/api/name", nameRoute);

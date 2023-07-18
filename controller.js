@@ -23,7 +23,7 @@ const getUser = async (req, res) => {
     if (validUser) {
       const data = validUser._id;
       const token = await jwt.sign({ userId: data }, "abcd1234");
-      res.cookie("token", token).status(200).send("dg");
+      res.cookie("token", token).status(200).send("token");
     } else {
       return res.status(500).send("invalid user");
     }
