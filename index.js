@@ -11,23 +11,19 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://jwt-frontend-snowy.vercel.app/",
+    origin: process.env.ORIGIN,
     credentials: true,
   })
 );
 
 app.use("/api/user", userRoute);
 app.use("/api/name", nameRoute);
-console.log(process.env.MONGO_URL);
 
 mongoose
-  .connect(
-    "mongodb+srv://ragulhp27:ragulhp2704@cluster0.hjbngoz.mongodb.net/jwt?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     app.listen(8080, () => {
       console.log("server listening on port 8080");
