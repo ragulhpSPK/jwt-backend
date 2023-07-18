@@ -11,10 +11,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://jwt-frontend-snowy.vercel.app/",
     credentials: true,
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Authorization"],
   })
 );
 
