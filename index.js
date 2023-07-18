@@ -9,7 +9,12 @@ require("dotenv").config();
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://jwt-frontend-snowy.vercel.app/",
+    credentials: true,
+  })
+);
 
 app.use("/api/user", userRoute);
 app.use("/api/name", nameRoute);
